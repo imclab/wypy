@@ -1,8 +1,5 @@
-from pprint import pprint
-# import json
 import os
 import subprocess
-import xmltodict
 
 class NoAirport(Exception):
     def __init__(self, error):
@@ -18,9 +15,7 @@ def airport_util():
     return airport_util_cmd.decode("utf-8")
 
 def main():
-    airport_xml = airport_util()
-    airport_odict = xmltodict.parse(airport_xml)
-    pprint(dict(airport_odict))
+    print(airport_util())
 
 if __name__ == '__main__':
     main()
